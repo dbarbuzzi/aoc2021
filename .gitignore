@@ -1,5 +1,5 @@
 .pytest_cache
 .vscode
-*.egg-info
 .python-version
 __pycache__
+*.egg-info

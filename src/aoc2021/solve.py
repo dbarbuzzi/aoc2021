@@ -1,8 +1,11 @@
 import argparse
 
-import aoc2021.day01 as day01
+import aoc2021
 
-solutions = {1: [day01.part1, day01.part2]}
+solutions = {
+    1: [aoc2021.day01.part1, aoc2021.day01.part2],
+    2: [aoc2021.day02.part1, aoc2021.day02.part2],
+}
 
 
 def parse_args():
