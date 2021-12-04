@@ -11,6 +11,7 @@ _dev_deps = [
     "flake8>=4.0.1",
     "isort>=5.10.1",
     "pycln>=1.1.0",
+    "pytest>=6.2.5",
 ]
 
 setup(
