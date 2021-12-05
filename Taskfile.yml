@@ -1,0 +1,20 @@
+# https://taskfile.dev
+
+version: "3"
+
+tasks:
+  fmt:
+    cmds:
+      - pycln .
+      - isort .
+      - black .
+  lint:
+    cmds:
+      - flake8 .
+  test:
+    cmds:
+      - pytest
+  default:
+    cmds:
+      - ^fmt
+      - ^lint
