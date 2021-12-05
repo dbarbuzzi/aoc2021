@@ -5,6 +5,7 @@ import aoc2021
 solutions = {
     1: [aoc2021.day01.part1, aoc2021.day01.part2],
     2: [aoc2021.day02.part1, aoc2021.day02.part2],
+    3: [aoc2021.day03.part1, aoc2021.day03.part2],
 }
 
 
