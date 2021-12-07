@@ -7,6 +7,7 @@ solutions = {
     2: [aoc2021.day02.part1, aoc2021.day02.part2],
     3: [aoc2021.day03.part1, aoc2021.day03.part2],
     4: [aoc2021.day04.part1, aoc2021.day04.part2],
+    5: [aoc2021.day05.part1, aoc2021.day05.part2],
 }
 
 
