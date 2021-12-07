@@ -1,35 +1,40 @@
+from typing import Iterator, List
+
 DATA_PATH = "data/day06-full.txt"
 
 
-def part1(data_path: str = DATA_PATH) -> int:
-    with open(data_path) as f:
-        initial_fish = map(int, f.read().strip().split(","))
+def load_data(fp: str) -> Iterator[int]:
+    with open(fp) as f:
+        return map(int, f.read().strip().split(","))
 
-    days = [0] * 9
-    for fish in initial_fish:
-        days[fish] += 1
 
-    num_days = 80
+def process_days(fish_on_day: List[int], num_days: int) -> List[int]:
     for _ in range(num_days):
-        births = days.pop(0)
-        days[6] += births
-        days.append(births)
+        births = fish_on_day.pop(0)
+        fish_on_day[6] += births
+        fish_on_day.append(births)
+    return fish_on_day
 
-    return sum(days)
+
+def part1(data_path: str = DATA_PATH) -> int:
+    initial_fish = load_data(data_path)
+
+    fish_on_day = [0] * 9
+    for fish in initial_fish:
+        fish_on_day[fish] += 1
+
+    fish_on_day = process_days(fish_on_day, 80)
+
+    return sum(fish_on_day)
 
 
 def part2(data_path: str = DATA_PATH) -> int:
-    with open(data_path) as f:
-        initial_fish = map(int, f.read().strip().split(","))
+    initial_fish = load_data(data_path)
 
-    days = [0] * 9
+    fish_on_day = [0] * 9
     for fish in initial_fish:
-        days[fish] += 1
+        fish_on_day[fish] += 1
 
-    num_days = 256
-    for _ in range(num_days):
-        births = days.pop(0)
-        days[6] += births
-        days.append(births)
+    fish_on_day = process_days(fish_on_day, 256)
 
-    return sum(days)
+    return sum(fish_on_day)

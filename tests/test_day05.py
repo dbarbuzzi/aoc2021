@@ -1,11 +1,21 @@
+import pytest
+
 from aoc2021 import day05
 
 
-def test_day05_part1():
-    data_path = "data/day05-sample.txt"
-    assert day05.part1(data_path) == 5
+@pytest.mark.parametrize(
+    ("name", "expected"),
+    [("sample", 5), ("full", 5690)],
+)
+def test_day05_part1(name: str, expected: int):
+    data_path = f"data/day05-{name}.txt"
+    assert day05.part1(data_path) == expected
 
 
-def test_day05_part2():
-    data_path = "data/day05-sample.txt"
-    assert day05.part2(data_path) == 12
+@pytest.mark.parametrize(
+    ("name", "expected"),
+    [("sample", 12), ("full", 17741)],
+)
+def test_day05_part2(name: str, expected: int):
+    data_path = f"data/day05-{name}.txt"
+    assert day05.part2(data_path) == expected
