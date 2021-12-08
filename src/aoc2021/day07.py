@@ -18,8 +18,8 @@ def calc_constant_costs(crabs: List[int]) -> Dict[int, int]:
 
 
 @cache
-def increasing_move_cost(distance: int) -> int:
-    return sum(range(distance + 1))
+def triangle(num: int) -> int:
+    return num * (num + 1) / 2
 
 
 def calc_increasing_cost(crabs: List[int], pos: int) -> int:
@@ -27,7 +27,7 @@ def calc_increasing_cost(crabs: List[int], pos: int) -> int:
     for crab in crabs:
         diff = abs(crab - pos)
         if diff > 0:
-            cost += increasing_move_cost(diff)
+            cost += triangle(diff)
     return cost
 
 
