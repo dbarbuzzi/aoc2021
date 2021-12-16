@@ -11,6 +11,7 @@ solutions = {
     6: [aoc2021.day06.part1, aoc2021.day06.part2],
     7: [aoc2021.day07.part1, aoc2021.day07.part2],
     8: [aoc2021.day08.part1, aoc2021.day08.part2],
+    9: [aoc2021.day09.part1, aoc2021.day09.part2],
 }
 
 
